@@ -6,3 +6,4 @@ option(DEBUG_LEVEL "Amount of debugging information to display when running a fu
 # Whether to include documentation.
 option(INCLUDE_DOCS "Whether documentation should be brought along with the build." 0)
 
+set(VERSION "pre-alpha-0")
