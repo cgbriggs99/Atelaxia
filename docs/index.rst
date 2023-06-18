@@ -10,6 +10,9 @@ Welcome to special-train's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   Contributing <contributing/index.rst>
+
+
 
 
 Indices and tables
