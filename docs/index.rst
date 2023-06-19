@@ -11,6 +11,7 @@ Welcome to special-train's documentation!
    :caption: Contents:
 
    Contributing <contributing/index.rst>
+   Credits <credits.rst>
 
 
 

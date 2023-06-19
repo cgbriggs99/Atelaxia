@@ -26,7 +26,7 @@ After forking the repository, your fork should be cloned to your local machine. 
 
    git clone [copy-paste from GitHub clone button]
 
-On your fork's "code" page, there should be a green button that reads "<> Code". This can be used to generate a URI for the `git clone` command. If you are not using the command line, read the documentation for your preferred Git manager.
+On your fork's "code" page, there should be a green button that reads "<> Code". This can be used to generate a URI for the ``git clone`` command. If you are not using the command line, read the documentation for your preferred Git manager.
 
 Create a Remote Branch
 ----------------------
@@ -63,7 +63,7 @@ Now you can finally start doing stuff. Make the changes you need. Then add the f
 
    git add [list of files that you want to add]
 
-However, if you simply want to add all files changed so far, except those excluded by `.gitignore`, you may use the following command.
+However, if you simply want to add all files changed so far, except those excluded by ``.gitignore``, you may use the following command.
 
 .. code::
 
@@ -85,9 +85,9 @@ If you want undo adding a file to the commit you are building, you may use the f
    # Remove the file from the commit and from your hard drive.
    git rm [file or files to be removed]
 
-If you want to force removal, use the `-f` option. If you want to remove all files in a directory, then delete the directory, use the `-r` option. If you want to remove both, use the `-rf` option. These options are placed between the "rm" and the first file to be removed.
+If you want to force removal, use the ``-f`` option. If you want to remove all files in a directory, then delete the directory, use the ``-r`` option. If you want to remove both, use the ``-rf`` option. These options are placed between the "rm" and the first file to be removed.
 
-After your commit has been set up using `git add`, you can finally commit. To do this, use the `git commit` command. This will give you a prompt asking for a commit message. Write something descriptive, but keep it to one sentence max. A commit message like "commit" or "made changes" is not descriptive. However, your commit will not be denied based on this as long as you can describe at least briefly what was changed when you go to finish your pull request. After your code is committed, it needs to be uploaded to GitHub. This can be done by simply using the `git push` command.
+After your commit has been set up using ``git add``, you can finally commit. To do this, use the ``git commit`` command. This will give you a prompt asking for a commit message. Write something descriptive, but keep it to one sentence max. A commit message like "commit" or "made changes" is not descriptive. However, your commit will not be denied based on this as long as you can describe at least briefly what was changed when you go to finish your pull request. After your code is committed, it needs to be uploaded to GitHub. This can be done by simply using the ``git push`` command.
 
 Create a Pull Request
 ---------------------
