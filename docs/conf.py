@@ -18,8 +18,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'special-train'
-copyright = '2023, Connor Briggs, Randall Golden'
-author = 'Connor Briggs, Randall Golden'
+copyright = '2023, Connor Briggs'
+author = 'Connor Briggs'
 
 # The full version, including alpha/beta/rc tags
 release = 'pre-alpha-0'
