@@ -5,9 +5,19 @@ import sys
 import argparse
 from PIL import Image as img
 
+"""
+This module converts image files into unihex format for Minecraft fonts.
+This can be done using the parse_file function.
+"""
+
 def to_hex_size(number, length) :
     """
 Convert a number to a hex string with the given length in bytes.
+
+Parameters
+----------
+number: The number to convert.
+length: The length in bytes that you want the number to be.
 """
     out = []
     vals = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b',
@@ -19,6 +29,7 @@ Convert a number to a hex string with the given length in bytes.
     for i in range(length * 2) :
         out.append(vals[conv % 16])
         conv //= 16
+    # Need to reverse it.
     return "".join(reversed(out))
 
 def parse_file(fname, cutoff = 0x7f, keep_dark = True) :
@@ -67,7 +78,7 @@ if __name__ == "__main__" :
                         required = True)
     parser.add_argument("--codepoint", "-p",
                         help = "The code point to set the character to.",
-                        required = True)
+                        required = False)
     parser.add_argument("--cutoff", "-c", default = 0x7f, type = int,
                         required = False,
                         help = "The cutoff for what is considered to be part of the character or not.")
@@ -77,7 +88,12 @@ if __name__ == "__main__" :
     
     args = vars(parser.parse_args())
 
+    # Convert the image.
     imgstring = parse_file(args["file"], args["cutoff"], args["keep_dark"])
 
-    print(to_hex_size(args["codepoint"], 3) + ":" + imgstring)
+    # Print the string.
+    if "codepoint" in args :
+        print(to_hex_size(args["codepoint"], 3) + ":" + imgstring)
+    else :
+        print(imgstring)
     
