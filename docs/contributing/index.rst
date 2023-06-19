@@ -8,3 +8,5 @@ We have seveal guidelines and guidances for contributing to special-train. Here 
    :caption: Contents
 
    Using Git <git.rst>
+   Development Cycle <dev-cycle.rst>
+   Manager Cooperation <managers.rsh>
