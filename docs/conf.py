@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'special-train'
+project = 'Atelaxia'
 copyright = '2023, Connor Briggs'
 author = 'Connor Briggs'
 

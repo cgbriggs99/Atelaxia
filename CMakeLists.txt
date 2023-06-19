@@ -1,4 +1,4 @@
-project(special-train)
+project(Atelaxia)
 
 # Option for adding debugging. Options are NONE, ERRORS, WARNINGS, INFOS.
 option(DEBUG_LEVEL "Amount of debugging information to display when running a function." "WARNINGS")
