@@ -18,11 +18,18 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Atelaxia'
-copyright = '2023, Connor Briggs'
 author = 'Connor Briggs'
+copyright = '2023, Connor Briggs, Randall Golden'
 
 # The full version, including alpha/beta/rc tags
 release = 'pre-alpha-0'
+
+# Source definitions. Some people prefer markdown, so we should allow it.
+sources = {
+    ".rst": "restructuredtext",
+    ".txt": "restructuredtext",
+    ".md": "markdown",
+    }
 
 
 # -- General configuration ---------------------------------------------------
@@ -31,6 +38,7 @@ release = 'pre-alpha-0'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    "sphinx.ext.imgmath"
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -47,9 +55,47 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'haiku'
-
+pallette = {
+    "white": "#ffffff",
+    "black": "#000000",
+    "primary": "#0052b9",
+    "secondary": "#005313",
+    "highlights": "#d3e6ff",
+    "background": "#f5fff7",
+    "link1": "#0052b9",
+    "link2": "#005313",
+    "codebg": "#f5f7ff",
+    "whitelink": "#f5f7ff"
+}
+html_theme = 'classic'
+html_theme_options = {
+    "headfont": "Gill Sans, sans-serif",
+    "bodyfont": "Garamond, Georgia, Times, serif",
+    "footerbgcolor": pallette["primary"],
+    "footertextcolor": pallette["white"],
+    "sidebarbgcolor": pallette["primary"],
+    "sidebarbtncolor": pallette["secondary"],
+    "sidebartextcolor": pallette["white"],
+    "sidebarlinkcolor": pallette["whitelink"],
+    "relbarbgcolor": pallette["secondary"],
+    "relbartextcolor": pallette["white"],
+    "relbarlinkcolor": pallette["whitelink"],
+    "bgcolor": pallette["background"],
+    "textcolor": pallette["black"],
+    "linkcolor": pallette["link1"],
+    "visitedlinkcolor": pallette["link2"],
+    "headbgcolor": pallette["highlights"],
+    "headtextcolor": pallette["secondary"],
+    "headlinkcolor": pallette["link1"],
+    "codebgcolor": pallette["codebg"],
+    "codetextcolor": pallette["black"]
+    
+}
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+# Add a logo.
+html_logo = "assets/logo.png"
+html_favicon = "assets/favicon.ico"
