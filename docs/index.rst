@@ -11,6 +11,7 @@ Welcome to Atelaxia's documentation!
    :caption: Contents:
 
    Contributing <contributing/index.rst>
+   Package Scripts <scripts/index.rst>
    Lore <lore/index.rst>
    Credits <credits.rst>
 

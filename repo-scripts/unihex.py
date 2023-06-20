@@ -1,5 +1,12 @@
 #!/usr/bin/python3
 
+# unihex.py
+# authors: Connor Briggs (cgbriggs99)
+#
+# Converts images into unihex format.
+#
+# Licensed under 
+
 import os
 import sys
 import argparse
@@ -52,7 +59,13 @@ keep_dark: Whether the cutoff makes dark pixels clear, or light pixels clear.
         for j in range(image.width) :
             # Convert to bits.
             row *= 2
-            value = sum(image.getpixel((j, i))) / len(image.getpixel((j, i)))
+            # Check if there is an alpha channel.
+            if len(image.getpixel((j, i)) == 4 :
+                   value = sum(image.getpixel((j, i))[:3]) / 3 * \
+                       image.getpixel((j, i))[3] / 255
+            else :
+                value = sum(image.getpixel((j, i))) / len(image.getpixel((j, i)))
+                
             if (value >= cutoff and not keep_dark) or \
                         (value <= cutoff and keep_dark) :
                 row += 1
@@ -79,7 +92,7 @@ if __name__ == "__main__" :
     parser.add_argument("--codepoint", "-p",
                         help = "The code point to set the character to.",
                         required = False)
-    parser.add_argument("--cutoff", "-c", default = 0x7f, type = int,
+    parser.add_argument("--cutoff", "-c", default = 0x7f,
                         required = False,
                         help = "The cutoff for what is considered to be part of the character or not.")
     parser.add_argument("--keep-dark", default = True, type = bool,
@@ -88,8 +101,16 @@ if __name__ == "__main__" :
     
     args = vars(parser.parse_args())
 
+    if "cutoff" in args :
+        try :
+            cutoff = int(args["cutoff"])
+        except ValueError :
+            cutoff = int(args["cutoff"], 16)
+    else :
+        cutoff = 0x7f
+
     # Convert the image.
-    imgstring = parse_file(args["file"], args["cutoff"], args["keep_dark"])
+    imgstring = parse_file(args["file"], cutoff, args["keep_dark"])
 
     # Print the string.
     if "codepoint" in args :
