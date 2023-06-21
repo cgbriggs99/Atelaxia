@@ -9,12 +9,11 @@
 	"water_color": 4159204,
 	"water_fog_color": 329011
     },
-    "ambient_sound": "atelaxia:music.overworld.fairflower",
     "music": {
 	"sound": "atelaxia:music.overworld.fairflower",
 	"min_delay": 12000,
 	"max_delay": 24000,
-	"replace_current_music": true
+	"replace_current_music": false
     },
     "carvers": {
     },
