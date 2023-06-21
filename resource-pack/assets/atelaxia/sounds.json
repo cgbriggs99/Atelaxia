@@ -1,0 +1,11 @@
+{
+    "music.overworld.fairflower": {
+	"replace": false,
+	"sounds": [
+	    {
+		"name": "atelaxia:fairflower",
+		"weight": 1000
+	    }
+	]
+    }
+}
