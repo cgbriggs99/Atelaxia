@@ -11,8 +11,8 @@
     },
     "music": {
 	"sound": "atelaxia:music.overworld.fairflower",
-	"min_delay": 12000,
-	"max_delay": 24000,
+	"min_delay": 0,
+	"max_delay": 1200,
 	"replace_current_music": false
     },
     "carvers": {
@@ -24,4 +24,3 @@
     "spawn_costs": {
     }
 }
-	
