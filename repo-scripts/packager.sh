@@ -15,17 +15,17 @@ package() {
 	cd ../maps
     fi
     
-    zip -ru ../build/Atelaxia-Map.zip * -x@../.gitignore
+    zip -r ../build/Atelaxia-Map.zip * -x@../.gitignore
     sha1sum ../build/Atelaxia-Map.zip >> ../build/sha1sums.txt
     
     # Package resource pack
     cd ../resource-pack
-    zip -ru ../build/Atelaxia-Resource-Pack.zip * -x@../.gitignore
+    zip -r ../build/Atelaxia-Resource-Pack.zip * -x@../.gitignore
     sha1sum ../build/Atelaxia-Resource-Pack.zip >> ../build/sha1sums.txt
     
     # Package data pack.
     cd ../data-pack
-    zip -ru ../build/Atelaxia-Data-Pack.zip * -x@../.gitignore
+    zip -r ../build/Atelaxia-Data-Pack.zip * -x@../.gitignore
     sha1sum ../build/Atelaxia-Data-Pack.zip >> ../build/sha1sums.txt
 }
 
