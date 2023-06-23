@@ -4,3 +4,10 @@
 *#
 build/*
 build-docs/*
+maps/world*/datapacks
+maps/world*/bluemap.id
+maps/world*/paper-world.yml
+maps/world*/stats
+maps/world*/uid.dat
+maps/world*/advancements
+maps/world*/playerdata
