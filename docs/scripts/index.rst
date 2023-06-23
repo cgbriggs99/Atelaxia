@@ -8,3 +8,4 @@ The documentation for scripts and modules that may be useful when developing for
    :caption: Contents
 
    Unihex Converter (unihex.py) <unihex.rst>
+   Packager Script (packager.sh) <packager.rst>
