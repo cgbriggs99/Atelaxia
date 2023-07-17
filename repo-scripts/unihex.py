@@ -4,18 +4,14 @@
 # authors: Connor Briggs (cgbriggs99)
 #
 # Converts images into unihex format.
-#
-# Licensed under 
-
-import os
-import sys
-import argparse
-from PIL import Image as img
 
 """
 This module converts image files into unihex format for Minecraft fonts.
 This can be done using the parse_file function.
 """
+
+import argparse
+from PIL import Image as img
 
 def to_hex_size(number, length) :
     """
@@ -33,7 +29,7 @@ length: The length in bytes that you want the number to be.
         conv = int(number)
     except ValueError :
         conv = int(number, 16)
-    for i in range(length * 2) :
+    for _ in range(length * 2) :
         out.append(vals[conv % 16])
         conv //= 16
     # Need to reverse it.
@@ -61,11 +57,11 @@ keep_dark: Whether the cutoff makes dark pixels clear, or light pixels clear.
             row *= 2
             # Check if there is an alpha channel.
             if len(image.getpixel((j, i))) == 4 :
-                   value = sum(image.getpixel((j, i))[:3]) / 3 * \
-                       image.getpixel((j, i))[3] / 255
+                value = sum(image.getpixel((j, i))[:3]) / 3 *\
+                        image.getpixel((j, i))[3] / 255
             else :
                 value = sum(image.getpixel((j, i))) / len(image.getpixel((j, i)))
-                
+
             if (value >= cutoff and not keep_dark) or \
                         (value <= cutoff and keep_dark) :
                 row += 1
@@ -94,27 +90,27 @@ if __name__ == "__main__" :
                         required = False)
     parser.add_argument("--cutoff", "-c", default = 0x7f,
                         required = False,
-                        help = "The cutoff for what is considered to be part of the character or not.")
+                        help = "The cutoff for what is considered to be" +
+                        "part of the character or not.")
     parser.add_argument("--keep-dark", default = True, type = bool,
                         required = False,
                         help = "Whether to keep dark pixels or light pixels")
-    
+
     args = vars(parser.parse_args())
 
     if "cutoff" in args :
         try :
-            cutoff = int(args["cutoff"])
+            CUTOFF_ARG = int(args["cutoff"])
         except ValueError :
-            cutoff = int(args["cutoff"], 16)
+            CUTOFF_ARG = int(args["cutoff"], 16)
     else :
-        cutoff = 0x7f
+        CUTOFF_ARG = 0x7f
 
     # Convert the image.
-    imgstring = parse_file(args["file"], cutoff, args["keep_dark"])
+    IMG_STRING = parse_file(args["file"], cutoff = CUTOFF_ARG, keep_dark = args["keep_dark"])
 
     # Print the string.
     if "codepoint" in args :
-        print(to_hex_size(args["codepoint"], 3) + ":" + imgstring)
+        print(to_hex_size(args["codepoint"], 3) + ":" + IMG_STRING)
     else :
-        print(imgstring)
-    
+        print(IMG_STRING)
