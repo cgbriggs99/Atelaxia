@@ -60,7 +60,7 @@ keep_dark: Whether the cutoff makes dark pixels clear, or light pixels clear.
             # Convert to bits.
             row *= 2
             # Check if there is an alpha channel.
-            if len(image.getpixel((j, i)) == 4 :
+            if len(image.getpixel((j, i))) == 4 :
                    value = sum(image.getpixel((j, i))[:3]) / 3 * \
                        image.getpixel((j, i))[3] / 255
             else :
