@@ -1,3 +1,6 @@
+# lower_increment
+# Increments the lowering animation counter.
+
 execute as @e[tag=rotate] at @s run tp @s ~ ~ ~ ~ ~1
 scoreboard players add counter drawbridge 1
 execute if score counter drawbridge < ninety drawbridge run schedule function atelaxia:drawbridge/lower_increment 1t

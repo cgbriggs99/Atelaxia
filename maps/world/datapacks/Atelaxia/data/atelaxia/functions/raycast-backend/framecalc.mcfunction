@@ -1,3 +1,6 @@
+# framecalc
+# Compute raycasting for a frame.
+
 ##getting the precise numbers and putting them into a scoreboard
 # get precise numbers from entitys
 execute as @e[tag=raycast] at @s run data modify storage ctm:itemframecalc frameX set from entity @e[type=minecraft:glow_item_frame,sort=nearest,limit=1] Pos[0]

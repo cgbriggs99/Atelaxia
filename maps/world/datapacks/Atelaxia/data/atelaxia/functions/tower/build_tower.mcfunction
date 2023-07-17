@@ -1,3 +1,6 @@
+# build_tower
+# Builds a tower.
+
 execute at @e[tag=buildtower] run summon block_display ~ ~ ~ {Tags:["tower"],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-2.5f,0f,0.5f],scale:[1f,1f,1f]},brightness:{sky:15,block:15},block_state:{Name:"minecraft:cobblestone"}}
 execute at @e[tag=buildtower] run summon block_display ~ ~ ~ {Tags:["tower"],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-2.5f,0f,-0.5f],scale:[1f,1f,1f]},brightness:{sky:15,block:15},block_state:{Name:"minecraft:cobblestone"}}
 execute at @e[tag=buildtower] run summon block_display ~ ~ ~ {Tags:["tower"],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-2.5f,0f,-1.5f],scale:[1f,1f,1f]},brightness:{sky:15,block:15},block_state:{Name:"minecraft:cobblestone"}}

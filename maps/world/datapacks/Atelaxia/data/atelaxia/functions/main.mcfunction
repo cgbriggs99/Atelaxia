@@ -1,3 +1,5 @@
+# main
+
 ##this file runs upon reload or startup of the minecraft server/world it is on
 say Atelaxia datapack has loaded
 scoreboard objectives add atelaxia_death deathCount

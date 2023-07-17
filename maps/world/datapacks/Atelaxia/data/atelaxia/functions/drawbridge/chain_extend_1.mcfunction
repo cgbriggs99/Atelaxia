@@ -1,3 +1,6 @@
+# chain_extend_1
+# Extends the chain on a drawbridge.
+
 execute if score counter drawbridge matches 90 run data modify entity @e[tag=chain1,limit=1] transformation.scale set value [1.0f,1.0f,7.00f]
 execute if score counter drawbridge matches 89 run data modify entity @e[tag=chain1,limit=1] transformation.scale set value [1.0f,1.0f,6.92f]
 execute if score counter drawbridge matches 88 run data modify entity @e[tag=chain1,limit=1] transformation.scale set value [1.0f,1.0f,6.84f]

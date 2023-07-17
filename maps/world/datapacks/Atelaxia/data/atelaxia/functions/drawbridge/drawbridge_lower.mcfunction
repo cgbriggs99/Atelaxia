@@ -1,3 +1,6 @@
+# drawbridge_lower
+# Lowers a drawbridge
+
 function atelaxia:drawbridge/fill_air
 schedule function atelaxia:drawbridge/lower_increment 1t
 schedule function atelaxia:drawbridge/chain_lower 1t

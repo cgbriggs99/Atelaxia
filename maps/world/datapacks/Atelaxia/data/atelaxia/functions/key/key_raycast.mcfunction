@@ -1,3 +1,6 @@
+# key_raycast
+# Raycasts for the key.
+
 scoreboard players reset @s atelaxia_key
 scoreboard players add key atelaxia_backend 1
 execute if block ^ ^ ^0.5 air positioned ^ ^ ^0.5 run function atelaxia:key/key_raycast

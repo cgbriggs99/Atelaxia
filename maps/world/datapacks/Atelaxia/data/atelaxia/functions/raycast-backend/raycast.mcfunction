@@ -1,3 +1,6 @@
+# raycast
+# Raycast for an object.
+
 #summon in an area effect cloud and make sure its individualized to the sender of this command each time it is sent ## one area effect cloud per person for efficiency, 
 #continued... --> summon a more permenant fix if you need it memory past the initial function
 function ctm:castcalc

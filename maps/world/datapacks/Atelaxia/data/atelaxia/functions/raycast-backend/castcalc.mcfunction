@@ -1,3 +1,6 @@
+# castcalc
+# Calculate raycasting.
+
 #note the sender of this raycast instance
 tag @s add raycastsender
 #reset score board once it gets high

@@ -1,3 +1,6 @@
+# summon_statue
+# Summons a statue.
+
 execute at @s run summon block_display ~ ~ ~ {Tags:["head","statue","gold_statue"],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.25f,0f,-0.25f],scale:[0.5f,0.5f,0.5f]},brightness:{sky:15,block:15},billboard:"center",block_state:{Name:"minecraft:jack_o_lantern",Properties:{facing:"south"}}}
 execute at @s run summon block_display ~ ~ ~ {Tags:["torso","statue","gold_statue"],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.25f,0f,-0.125f],scale:[0.5f,0.75f,0.25f]},brightness:{sky:15,block:15},block_state:{Name:"minecraft:gold_block"}}
 execute at @s run summon block_display ~ ~ ~ {Tags:["rleg","statue","gold_statue"],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.25f,0f,-0.125f],scale:[0.25f,0.75f,0.25f]},brightness:{sky:15,block:15},block_state:{Name:"minecraft:gold_block"}}
