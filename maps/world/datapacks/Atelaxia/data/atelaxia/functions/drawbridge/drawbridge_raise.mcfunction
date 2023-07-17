@@ -1,3 +1,6 @@
+# drawbridge_raise
+# Raises a drawbridge.
+
 function atelaxia:drawbridge/fill_water
 schedule function atelaxia:drawbridge/raise_increment 1t
 schedule function atelaxia:drawbridge/chain_raise 1t

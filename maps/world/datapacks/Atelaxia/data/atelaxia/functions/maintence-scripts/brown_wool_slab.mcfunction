@@ -1,4 +1,4 @@
-#brown_Wool_Slab - generations function
+#brown_wool_slab - generations function
 #tags the temp placed wool item frame (brown bottom)
 execute at @s as @e[type=minecraft:item_frame,distance=..10,nbt={ItemRotation:0b,Item:{id:"minecraft:brown_wool",Count:1b}}] run data modify entity @s Tags set value ["brown_wool_slab_temp","brown_wool_slab_bottom_temp"]
 #summons a brown_Wool_Slab_Bottom (item_frame with custom model data 4 from atelaxia resource pack) at the location of a item_frame with brown wool((rotated in the 2 or 3 position) in it. limited to 10 blocks from the player.

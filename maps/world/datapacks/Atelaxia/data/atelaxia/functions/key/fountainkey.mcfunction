@@ -1,3 +1,6 @@
+# fountainkey
+# Summons the key?
+
 setblock 2 72 -50 air
 setblock 2 73 -50 air
 setblock 2 74 -50 air
