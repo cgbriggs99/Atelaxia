@@ -12,3 +12,5 @@ maps/world*/uid.dat
 maps/world*/advancements
 maps/world*/playerdata
 *__pycache__*
+*.pyc
+*.pyo
