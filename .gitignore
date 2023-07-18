@@ -14,3 +14,4 @@ maps/world*/playerdata
 *__pycache__*
 *.pyc
 *.pyo
+temp_*
