@@ -42,3 +42,28 @@ Spaces Between Operators
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Spaces are preferred between arguments of a binary operator and the operator. Spaces are also preferred after commas, as well as after colons in dictionary entries. They are not prefered in slices, and not required before control flow colons. If you have a way you are comfortable with, go with your preferred spacing. Otherwise, try to use ours to become more familiar with consistent style.
+
+Comments and Docstrings
+-----------------------
+
+Your code should be documented in the source as well as in the documentation. There should be a docstring at the beginning of your module which gives a brief description of what is in the module. Your classes should have the same. Your functions and methods should have docstrings which outline the usage and parameters. Autodoc is enabled, so feel free to use it in your docstrings. You will still need to add the functions to the apropriate file. Here is an example docstring.
+
+.. code-block:: python
+
+   """
+   module_name
+
+   Brief description of module.
+   """
+
+   def function(arg1, *args) :
+       """
+       function OR module_name.function
+
+       :param arg1: Parameter description.
+       :return: Return value
+
+       Brief description of function.
+       """
+
+If manual documentation is written, then you may use any style of docstring, so long as all of the required fields are present.
