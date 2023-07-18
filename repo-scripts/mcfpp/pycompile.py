@@ -7,12 +7,12 @@ Compile a Minecraft+Python file into pure Python.
 import os
 import sys
 
-__header = """
+__HEADER = """
 if __name__ == "__main__" :
     print("# Auto-generated function file.", file = __mc_output__)
 """
 
-__footer = """
+__FOOTER = """
 if __name__ == "__main__" :
     try :
         close(__mc_output__)
@@ -50,7 +50,7 @@ if "__mc_output__" not in globals() and "__mc_output__" not in locals() :
 if type(__mc_output__) is str :
     __mc_output__ = open(__mc_output__, "w+")""", file = out_fp)
 
-    print(__header, file = out_fp)
+    print(__HEADER, file = out_fp)
 
     if verbose :
         print("Header information added.", file = sys.stderr)
@@ -82,14 +82,14 @@ if type(__mc_output__) is str :
                     print("Found mcf block", file = sys.stderr)
                 # This is the beginning of the mcf block.
                 is_mcfunc = True
-                
+
                 # Calculate the indentation level.
                 indent = 0
                 while line[indent] == " " :
                     indent += 1
                 if verbose :
                     print(f"mcf block at indent level {indent}", file = sys.stderr)
-            
+
             else :
                 # This is not the beginning of a function block.
                 line = line.expandtabs()
@@ -119,8 +119,8 @@ if type(__mc_output__) is str :
                     # Grab the next line and stick it on the end.
                     try :
                         line = line[:-1] + " " + next(in_fp).expandtabs(8).strip()
-                    except Exception :
-                        raise SyntaxError("EOL while scanning line.")
+                    except Exception as error :
+                        raise SyntaxError("EOL while scanning line.") from error
 
                 # Set up the new line.
                 out_line = "".join([" " for i in range(indent)])
@@ -183,13 +183,12 @@ if type(__mc_output__) is str :
                                 out_line += line[i]
                         else :
                             out_line += line[i]
-                            
+
                 if brace_state != 0 or paren_state != 0 :
                     raise SyntaxError("Braces or parentheses not closed!")
                 out_line += "\", file = __mc_output__)"
                 print(out_line, file = out_fp)
     # Print the footer
-    print(__footer, file = out_fp)
+    print(__FOOTER, file = out_fp)
     if verbose :
         print("Footer information added. File finished.", file = sys.stderr)
-            

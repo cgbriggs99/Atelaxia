@@ -6,12 +6,14 @@ The main program for the Minecraft function preprocessor.
 
 import argparse
 import sys
-from . import *
 import time
 import os
+from . import pycompile
+from . import version
 
 
-def main(argv = sys.argv) :
+
+def main(argv = None) :
     """
     main
 
@@ -44,7 +46,10 @@ Preprocess a Minecraft function file.
                         action = "store_true")
 
     # Parse the arguments.
-    args = vars(parser.parse_args(argv[1:]))
+    if argv is not None :
+        args = vars(parser.parse_args(argv))
+    else :
+        args = vars(parser.parse_args())
 
     if "v" in args and args["v"] :
         print(f"Parsed arguments: {args}", file = sys.stderr)
@@ -54,58 +59,58 @@ Preprocess a Minecraft function file.
         return
 
     # Set up the output file. If none, then standard output is assumed.
-    if "o" in args and type(args["o"]) == str:
-        OUTPUT_FILE = open(args["o"], "w+")
+    if "o" in args and isinstance(args["o"], str):
+        output_file = open(args["o"], "w+")
     else :
-        OUTPUT_FILE = sys.stdout
+        output_file = sys.stdout
 
-    INCLUDE_SEARCH = sys.path
+    include_search = sys.path
     if "B" in args and args["B"] is not None :
-        INCLUDE_SEARCH.extend(args["B"])
+        include_search.extend(args["B"])
 
     if "v" in args and args["v"] :
-        print(f"Include search path is now the following: {INCLUDE_SEARCH}")
+        print(f"Include search path is now the following: {include_search}")
 
     if "save_temps" not in args or not args["save_temps"] :
-        TEMP_FILE = open(os.path.abspath(f"./temp_{hash(time.gmtime())}.py"), "w+")
+        temp_file = open(os.path.abspath(f"./temp_{hash(time.gmtime())}.py"), "w+")
     elif "c" not in args or not args["c"]:
-        TEMP_FILE = open(os.path.abspath(args["filename"]).replace(".mcpy", ".py"), "w+")
+        temp_file = open(os.path.abspath(args["filename"]).replace(".mcpy", ".py"), "w+")
     elif "c" in args and args["c"] :
-        TEMP_FILE = OUTPUT_FILE
+        temp_file = output_file
     else :
-        TEMP_FILE = sys.stdout
+        temp_file = sys.stdout
 
     if "v" in args and args["v"] :
-        print(f"Temporary file: {TEMP_FILE.name}", file = sys.stderr)
+        print(f"Temporary file: {temp_file.name}", file = sys.stderr)
 
-    IN_FILE = open(os.path.abspath(args["filename"]), "r")
+    in_file = open(os.path.abspath(args["filename"]), "r")
 
     # Translate the file.
-    pycompile.translate(IN_FILE, TEMP_FILE, OUTPUT_FILE,
+    pycompile.translate(in_file, temp_file, output_file,
                           verbose = args["v"])
 
     # Make the final output.
     if "c" not in args or not args["c"] :
         if args["v"] :
             print("Compiling file.", file = sys.stderr)
-        TEMP_FILE.flush()
-        TEMP_FILE.seek(0)
-        TEMP_FILE.flush()
-        source = compile(TEMP_FILE.read(), str(TEMP_FILE.name), "exec")
+        temp_file.flush()
+        temp_file.seek(0)
+        temp_file.flush()
+        source = compile(temp_file.read(), str(temp_file.name), "exec")
         exec(source)
-        
+
         if "save_temps" not in args or not args["save_temps"] :
             if "v" in args and args["v"] :
-                print(f"Removing {TEMP_FILE.name}")
-            name = TEMP_FILE.name
+                print(f"Removing {temp_file.name}")
+            name = temp_file.name
             os.remove(os.path.abspath(name))
     if "v" in args and args["v"] :
         print("Finishing up.", file = sys.stderr)
-    TEMP_FILE.close()
-    IN_FILE.close()
-    if TEMP_FILE is not OUTPUT_FILE :
-        OUTPUT_FILE.close()
-    
+    temp_file.close()
+    in_file.close()
+    if temp_file is not output_file :
+        output_file.close()
+
 
 if __name__ == "__main__" :
     main()
