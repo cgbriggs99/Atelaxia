@@ -4,7 +4,9 @@
 *#
 build/*
 build-docs/*
-maps/world*/datapacks
+!maps/world*/datapacks
+maps/world*/datapacks/*
+!maps/world*/datapacks/Atelaxia
 maps/world*/bluemap.id
 maps/world*/paper-world.yml
 maps/world*/stats
