@@ -10,3 +10,4 @@ We have seveal guidelines and guidances for contributing to Atelaxia. Here they 
    Using Git <git.rst>
    Development Cycle <dev-cycle.rst>
    Manager Cooperation <managers.rst>
+   Style Guides and Templates <styles/index.rst>

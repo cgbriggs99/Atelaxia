@@ -1,0 +1,7 @@
+import math
+
+if __name__ == "__main__" :
+    for i in range(10) :
+        mcf :
+            say @a "Sine of $(i) is $(math.sin(i))"
+	    

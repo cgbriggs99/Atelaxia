@@ -4,10 +4,16 @@
 *#
 build/*
 build-docs/*
-maps/world*/datapacks
+!maps/world*/datapacks
+maps/world*/datapacks/*
+!maps/world*/datapacks/Atelaxia
 maps/world*/bluemap.id
 maps/world*/paper-world.yml
 maps/world*/stats
 maps/world*/uid.dat
 maps/world*/advancements
 maps/world*/playerdata
+*__pycache__*
+*.pyc
+*.pyo
+temp_*

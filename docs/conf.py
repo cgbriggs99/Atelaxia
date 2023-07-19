@@ -20,10 +20,11 @@
 project = 'Atelaxia'
 author = 'Connor Briggs'
 copyright = '2023, Connor Briggs, Randall Golden'
-rst_epilog = "https://www.github.com/cgbriggs99/Atelaxia"
+#rst_epilog = "https://www.github.com/cgbriggs99/Atelaxia"
 
 # The full version, including alpha/beta/rc tags
-release = 'pre-alpha-0'
+with open("../version.txt") as fp :
+    release = next(fp).strip()
 
 # Source definitions. Some people prefer markdown, so we should allow it.
 sources = {
@@ -39,7 +40,10 @@ sources = {
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    "sphinx.ext.imgmath"
+    "sphinx.ext.imgmath",
+    "sphinx.ext.autodoc",
+    "sphinx.ext.todo",
+    "sphinx.ext.viewcode"
 ]
 
 # Add any paths that contain templates here, relative to this directory.
