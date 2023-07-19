@@ -1,0 +1,24 @@
+.footer {
+    display: flex;
+}
+
+.footer-left {
+    text-align: left;
+    flex: 25%;
+    padding-left: 10px;
+}
+
+.footer-center {
+    text-align: center;
+    flex: 50%;
+}
+
+.footer-right {
+    text-align: right;
+    flex: 25%;
+    padding-right: 10px;
+}
+    
+.social-button {
+    padding: 3px;
+}
