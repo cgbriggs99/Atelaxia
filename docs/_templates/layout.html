@@ -1,0 +1,27 @@
+{% extends "!layout.html" %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="_static/footer.css"></link>
+{% endblock %}
+
+{% block footer %}
+<div class="footer">
+  <div class="footer-left">
+    <!-- Github logo -->
+    <a href="https://github.com/cgbriggs99/Atelaxia" class="social-button"><img src="_static/github-mark-white.svg" height="24" alt="Github"></img></a>
+
+    <!-- Discord -->
+    <a href="https://discord.gg/ppQCvhuJGE" class="social-button"><img src="_static/discord-mark-white.svg" height="24" alt="Discord"></img></a>
+    
+    <!-- Shadowlands -->
+      <a href="https://shadowlandsmc.com/" class="social-button"><img src="_static/shadowlands-mark.png" height="24" alt="Homepage"></img></a>
+  </div>
+  <div class="footer-center">
+    &#169; Copyright 2023, Connor Briggs, Randall Golden.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.<br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+  </div>
+  <div class="footer-right">
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+  </div>
+</div>
+{% endblock %}

@@ -104,3 +104,4 @@ html_static_path = ['_static']
 # Add a logo.
 html_logo = "assets/logo.png"
 html_favicon = "assets/favicon.ico"
+    
