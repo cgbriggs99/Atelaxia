@@ -39,8 +39,6 @@ clean() {
     fi
 }
 
-echo $1
-
 if [ "$1" = "clean" ]; then
     clean
 else
