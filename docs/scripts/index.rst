@@ -9,3 +9,4 @@ The documentation for scripts and modules that may be useful when developing for
 
    Unihex Converter (unihex.py) <unihex.rst>
    Packager Script (packager.sh) <packager.rst>
+   Minecraft Function Preprocessor (mcfpp) <mcfpp.rst>
