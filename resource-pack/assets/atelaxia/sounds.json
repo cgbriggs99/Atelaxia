@@ -1,0 +1,42 @@
+{
+    "music.overworld.fairflower": {
+	"replace": true,
+	"sounds": [
+	    {
+		"name": "atelaxia:fairflower"
+	    }
+	]
+    },
+	"monsters.ogre.rawr": {
+		"replace": true,
+		"sounds": [
+			{
+			"name": "atelaxia:monsters/ogre/ogre-rawr"
+			}
+		]
+		},
+    "music.overworld.atelaxia2loopmono": {
+	"replace": true,
+	"sounds": [
+	    {
+		"name": "atelaxia:atelaxia2loopmono"
+	    }
+	]
+    },
+	"music_disc.pigstep": {
+		"sounds": [
+		  {
+			"name": "atelaxia:records/pigstep",
+			"stream": true
+		  }
+		]
+	  },
+	"music.overworld.welcome": {
+		"replace": true,
+		"sounds": [
+			{
+			"name": "atelaxia:welcome"
+			}
+		]
+		}
+}
