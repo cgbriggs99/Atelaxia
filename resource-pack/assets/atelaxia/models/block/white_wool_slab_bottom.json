@@ -1,0 +1,29 @@
+{
+	"credit": "Made with Blockbench",
+
+	"textures": {
+		"3": "atelaxia:block/white_wool",
+		"particle": "#side"
+	},
+	"elements": [
+		{
+			"from": [-0.1, -0.1, -0.1],
+			"to": [16.1, 8.1, 16.1],
+			"faces": {
+				"north": {"uv": [0, 8, 16, 16], "texture": "#3", "cullface": "north"},
+				"east": {"uv": [0, 8, 16, 16], "texture": "#3", "cullface": "east"},
+				"south": {"uv": [0, 8, 16, 16], "texture": "#3", "cullface": "south"},
+				"west": {"uv": [0, 8, 16, 16], "texture": "#3", "cullface": "west"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#3"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#3", "cullface": "down"}
+			}
+		}
+	],
+	"display": {
+		"fixed": {
+			"rotation": [90, 0, 0],
+			"translation": [0, 0, 0],
+			"scale": [2, 2, 2]
+		}
+	}
+}

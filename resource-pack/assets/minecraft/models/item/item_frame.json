@@ -1,0 +1,16 @@
+{
+    "parent": "item/generated",
+    "textures": {
+     "layer0": "item/item_frame"
+    },
+   
+    "overrides": [
+     { "predicate": {"custom_model_data": 1}, "model": "atelaxia:block/white_wool_slab_bottom"},
+     { "predicate": {"custom_model_data": 2}, "model": "atelaxia:block/white_wool_slab_top"},
+     { "predicate": {"custom_model_data": 3}, "model": "atelaxia:block/brown_wool_slab_bottom"},
+     { "predicate": {"custom_model_data": 4}, "model": "atelaxia:block/brown_wool_slab_top"}
+   
+    ]
+   
+    
+   }
