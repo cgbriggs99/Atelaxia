@@ -15,6 +15,7 @@ package() {
 	cd ../maps
     fi
     
+<<<<<<< HEAD
     zip -ru ../build/Atelaxia-Map.zip * -x@../.gitignore
     cd ../build
     sha1sum Atelaxia-Map.zip >> sha1sums.txt
@@ -24,6 +25,20 @@ package() {
     zip -ru ../build/Atelaxia-Resource-Pack.zip * -x@../.gitignore
     cd ../build
     sha1sum Atelaxia-Resource-Pack.zip >> sha1sums.txt
+=======
+    zip -r ../build/Atelaxia-Map.zip * -x@../.gitignore
+    sha1sum ../build/Atelaxia-Map.zip >> ../build/sha1sums.txt
+    
+    # Package resource pack
+    cd ../resource-pack
+    zip -r ../build/Atelaxia-Resource-Pack.zip * -x@../.gitignore
+    sha1sum ../build/Atelaxia-Resource-Pack.zip >> ../build/sha1sums.txt
+    
+    # Package data pack.
+    cd ../data-pack
+    zip -r ../build/Atelaxia-Data-Pack.zip * -x@../.gitignore
+    sha1sum ../build/Atelaxia-Data-Pack.zip >> ../build/sha1sums.txt
+>>>>>>> 0386f3f (Fixed the packager. Now it should delete files that get deleted.)
 }
 
 # Clean the build directory.
