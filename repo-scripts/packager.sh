@@ -18,13 +18,13 @@ package() {
     zip -r ../build/Atelaxia-Map.zip * -x@../.gitignore
     cd ../build
     sha1sum Atelaxia-Map.zip >> sha1sums.txt
+
     
     # Package resource pack
     cd ../resource-pack
     zip -r ../build/Atelaxia-Resource-Pack.zip * -x@../.gitignore
     cd ../build
     sha1sum Atelaxia-Resource-Pack.zip >> sha1sums.txt
-
 }
 
 # Clean the build directory.
